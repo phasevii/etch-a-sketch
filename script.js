@@ -1,13 +1,13 @@
 const wrapper = document.createElement("div");
-wrapper.setAttribute("id","wrapper");
+wrapper.setAttribute("class","wrapper");
 document.body.appendChild(wrapper);
 
 const container = document.createElement("div");
-container.setAttribute("id","container");
-document.wrapper.appendChild(container);
+container.setAttribute("class","container");
+wrapper.appendChild(container);
 
 //Will be redefined later to accept user input
-let gridSize = 16;
+let gridSize = 16*16;
 
 function createGrid() {
     for (i = 0; i < gridSize; i++) {
@@ -17,3 +17,4 @@ function createGrid() {
         }
     }
 
+createGrid()
