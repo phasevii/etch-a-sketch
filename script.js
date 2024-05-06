@@ -7,13 +7,20 @@ container.setAttribute("class","container");
 wrapper.appendChild(container);
 
 //Will be redefined later to accept user input
-let gridSize = 16*16;
+let gridSize = 256;
+let gridLength = gridSize / 16;
+
 
 function createGrid() {
-    for (i = 0; i < gridSize; i++) {
-        const gridElement = document.createElement("div");
-        gridElement.setAttribute("class", "grid");
-        container.appendChild(gridElement);
+    for (i = 0; i < gridLength; i++) {
+        const gridColumn = document.createElement("div");
+        gridColumn.setAttribute("class", "column");
+        container.appendChild(gridColumn);
+        for (j=0; j < gridLength; j++) {
+            const gridElement = document.createElement("div");
+            gridElement.setAttribute("class", "grid");
+            gridColumn.appendChild(gridElement);
+        }
         }
     }
 
