@@ -19,6 +19,9 @@ function createGrid() {
         for (j=0; j < gridLength; j++) {
             const gridElement = document.createElement("div");
             gridElement.setAttribute("class", "grid");
+            gridElement.addEventListener("mouseover", () => {
+                gridElement.style.backgroundColor = "black";
+            })
             gridColumn.appendChild(gridElement);
         }
         }
