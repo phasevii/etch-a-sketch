@@ -28,3 +28,8 @@ function createGrid() {
     }
 
 createGrid()
+
+const gridButton = document.createElement("button");
+gridButton.setAttribute("class", "btn");
+gridButton.textContent = "Select grid size";
+wrapper.appendChild(gridButton);
