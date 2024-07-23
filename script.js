@@ -34,22 +34,6 @@ gridButton.setAttribute("class", "btn");
 gridButton.textContent = "Select grid size";
 wrapper.appendChild(gridButton);
 
-const gridSizeDialog = document.createElement("dialog");
-wrapper.appendChild(gridSizeDialog);
-
-const gridSizeModalButton = document.createElement("button");
-gridSizeModalButton.setAttribute("class", "btn");
-gridSizeModalButton.textContent = "Close";
-gridSizeDialog.appendChild(gridSizeModalButton);
-
-const gridModalText = document.createElement("p");
-gridModalText.textContent = "What size is your etch-a-sketch?";
-gridSizeDialog.appendChild(gridModalText);
-
 gridButton.addEventListener("click", () => {
-    gridSizeDialog.showModal();
-})
-
-gridSizeModalButton.addEventListener("click", () => {
-    gridSizeDialog.close();
+    
 })
