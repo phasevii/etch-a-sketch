@@ -35,5 +35,11 @@ gridButton.textContent = "Select grid size";
 wrapper.appendChild(gridButton);
 
 gridButton.addEventListener("click", () => {
-    
+    gridSize = Number(prompt("What size is your grid?"));
+    if (gridSize % 0) {
+        gridLength = Math.sqrt(gridSize);
+    }
+    else {
+        
+    }
 })
