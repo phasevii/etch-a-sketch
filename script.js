@@ -6,10 +6,13 @@ const container = document.createElement("div");
 container.setAttribute("class","container");
 wrapper.appendChild(container);
 
-//Will be redefined later to accept user input
-let gridSize = 256;
-let gridLength = gridSize / 16;
+let gridSize;
+let gridLength;
 
+const gridButton = document.createElement("button");
+gridButton.setAttribute("class", "btn");
+gridButton.textContent = "Select grid size";
+wrapper.appendChild(gridButton);
 
 function createGrid() {
     for (i = 0; i < gridLength; i++) {
@@ -27,19 +30,13 @@ function createGrid() {
         }
     }
 
-createGrid()
-
-const gridButton = document.createElement("button");
-gridButton.setAttribute("class", "btn");
-gridButton.textContent = "Select grid size";
-wrapper.appendChild(gridButton);
-
 gridButton.addEventListener("click", () => {
-    gridSize = Number(prompt("What size is your grid?"));
-    if (gridSize % 0) {
+        gridSize = Number(prompt("What size is your grid?"));
         gridLength = Math.sqrt(gridSize);
-    }
-    else {
-        
-    }
+        if (container.hasChildNodes()) {
+           for (i = 0; i < gridLength; i++) {
+                container.innerHTML = "";
+            }
+        }
+        createGrid();
 })
